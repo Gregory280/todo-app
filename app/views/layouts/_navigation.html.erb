@@ -1,7 +1,9 @@
-<div class=" container ui stackable menu" style="margin-top:15px;">
-    <div class="item">
-        <%=image_tag("logo.png")%>
-    </div>
+<div class="container ui stackable menu" style="margin-top:15px;">
+    <%= link_to root_path do %>
+        <div class="item">
+            <%=image_tag("logo.png")%>
+        </div>
+    <% end %>
     <div class="item">
         About
     </div>
