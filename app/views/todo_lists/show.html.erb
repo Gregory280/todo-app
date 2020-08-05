@@ -5,9 +5,15 @@
     <%= link_to 'Edit', edit_todo_list_path(@todo_list), class: 'color-text-white' %>
   </button>
   <span class="ui <%= @todo_list.badge_color %> label tiny badge-margin"><%= @todo_list.status %></span>
-  <div class="header ui left floated">
-    <h2><%= @todo_list.title %></h2>
-  </div>
+  <% if @todo_list.percent_complete == 100 %>
+    <div class="header ui left floated completed-list">
+      <h2><%= @todo_list.title %></h2>
+    </div>
+  <% else %>
+    <div class="header ui left floated">
+      <h2><%= @todo_list.title %></h2>
+    </div>
+  <% end %>
   <span class="margin-progress-tracking"><%= @todo_list.percent_complete %> %  Completed (<%= @todo_list.completed_items %>/<%= @todo_list.total_items %> Items)</span>
 </div>
 
