@@ -1,6 +1,5 @@
 class TodoList < ApplicationRecord
   has_many :todo_items
-  belongs_to :user
   def total_items
     @total_items ||= todo_items.count
   end
