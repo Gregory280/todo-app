@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h2 class="ui block header">
+  ToDo Lists
+  <div class="ui right floated button primary new-todo-list-btn">
+    <%= link_to 'New Todo List', new_todo_list_path, class: 'color-text-white' %>
+  </div>
+</h2>
+
+<div class="ui middle aligned divided list">
+  <div class="item">
+    <div class="content">
+    <% @todo_lists.each do |todo_list| %>
+      <div class="ui segment">
+        <a class="header"><%= todo_list.title %></a>
+        <%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui negative basic button mini right floated align-btn-todo-lists' %>
+        <%= link_to 'Edit', edit_todo_list_path(todo_list), class: 'ui primary basic button mini right floated align-btn-todo-lists' %>
+        <%= link_to 'Show', todo_list, class: 'ui secondary basic button mini right floated align-btn-todo-lists' %>
+      </div>
+    <% end %>
+      
+    </div>
+  </div>
+</div>
